@@ -33,14 +33,9 @@ public class VerifyCtrl
 		// 获取Android的PackageManager    
 		AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
 		AndroidJavaObject Activity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
-        if(Activity == null)
-            return true;
 		AndroidJavaObject PackageManager = Activity.Call<AndroidJavaObject>("getPackageManager");
-		if(PackageManager == null)
-            return true;
 		// 获取当前Android应用的包名
 		packageName = Activity.Call<string>("getPackageName");
-		
 		// 调用getPackageInfo方法来获取签名信息数组    
 		int GET_SIGNATURES = PackageManager.GetStatic<int>("GET_SIGNATURES");
 		AndroidJavaObject PackageInfo = PackageManager.Call<AndroidJavaObject>("getPackageInfo", packageName, GET_SIGNATURES);
