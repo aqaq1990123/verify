@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*包体签名验证器 (PS:建议这个类名改成其他有意义的单词或者乱七八糟的词汇) */
+/*包体签名验证器 (PS:建议后续这个类名改成其他有意义的单词或者乱七八糟的词汇) */
 public class VerifyCtrl
 {
     
@@ -19,12 +19,12 @@ public class VerifyCtrl
         }
     }
     
-    private static int MY_SIGN_HASH = 83475354;
+    private static int MY_SIGN_HASH = 83475354;//你自己的签名信息
     public string packageName;
     public int curSignHash = 0;
 
     /// <summary>
-    /// 是否包体签名验证通过(PS:建议这个类名改成其他有意义的单词或者乱七八糟的词汇) 
+    /// 是否包体签名验证通过(PS:建议后续这个类名改成其他有意义的单词或者乱七八糟的词汇) 
     /// </summary>
     /// <returns></returns>
     public bool IsCorrect()
